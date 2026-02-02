@@ -1,7 +1,10 @@
 "use client";
 
-import { ClipboardList, Users, Sparkles, ArrowDown } from "lucide-react";
+import Image from "next/image";
+import { ClipboardList, Users, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+const PROBLEMS_IMAGE = "/images/problems-solutions.png";
 
 const problems = [
   {
@@ -27,6 +30,13 @@ const problems = [
   },
 ];
 
+const circleLabels = ["①", "②"] as const;
+const pointTitles = ["現状を知ろう", "解決策を知る"] as const;
+const pointSubs = [
+  "どんなことが問題になっているのか把握しよう",
+  "解決するにはどうすればいい?",
+] as const;
+
 export function Problems() {
   const [sectionRef, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
 
@@ -36,7 +46,6 @@ export function Problems() {
       ref={sectionRef}
       className="py-24 md:py-36 bg-card relative overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -55,73 +64,109 @@ export function Problems() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {problems.map((problem, index) => (
-            <div
-              key={problem.title}
-              className={`group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                }`}
-              style={{ transitionDelay: `${(index + 1) * 150}ms` }}
-            >
-              <div className="h-full bg-background rounded-2xl p-6 md:p-8 border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
-                {/* Icon and Title */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${problem.gradient} flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110`}>
-                  <problem.icon className="w-7 h-7 text-primary" />
-                </div>
-
-                <h3 className="text-xl font-bold text-foreground mb-8">
-                  {problem.title}
-                </h3>
-
-                {/* Before Section */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 text-xs font-bold rounded-full bg-muted text-muted-foreground">
-                      現状
-                    </span>
+        {/* One part per section: Part 1 & 3 = image left, text right. Part 2 = text left, image right. One image for all. */}
+        <div className="space-y-12 md:space-y-16">
+          {problems.map((problem, partIndex) => {
+            const imageOnLeft = partIndex !== 1; // Part 1 and 3: left. Part 2: right.
+            return (
+              <div
+                key={problem.title}
+                className={`rounded-2xl border-2 border-primary/30 bg-background overflow-hidden shadow-md transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
+                style={{ transitionDelay: `${(partIndex + 1) * 120}ms` }}
+              >
+                <div
+                  className={`grid md:grid-cols-2 gap-0 min-h-0 ${!imageOnLeft ? "md:grid-flow-dense" : ""
+                    }`}
+                >
+                  {/* Image block - one image for all parts */}
+                  <div
+                    className={`relative aspect-[4/3] md:aspect-auto md:min-h-[280px] ${!imageOnLeft ? "md:col-start-2" : ""
+                      }`}
+                  >
+                    <Image
+                      src={PROBLEMS_IMAGE}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  <ul className="space-y-3">
-                    {problem.before.map((item) => (
-                      <li
-                        key={item}
-                        className="text-sm text-muted-foreground flex items-start gap-3"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40 mt-2 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                {/* Arrow */}
-                <div className="flex items-center justify-center py-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <ArrowDown className="w-5 h-5 text-primary" />
+                  {/* Text block: Icon + Title + Explanation + Numbered points */}
+                  <div
+                    className={`p-6 md:p-8 flex flex-col justify-center border-t md:border-t-0 md:border-l border-border ${!imageOnLeft ? "md:col-start-1 md:row-start-1 md:border-l-0 md:border-r" : ""
+                      }`}
+                  >
+                    <div
+                      className={`w-14 h-14 rounded-xl border-2 border-primary/40 bg-gradient-to-br ${problem.gradient} flex items-center justify-center shrink-0 mb-3`}
+                    >
+                      <problem.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                      {problem.title}
+                    </h3>
+                    <div className="border border-border rounded-lg p-4 bg-muted/20 mb-5">
+                      <p className="text-sm font-bold text-sky-600 dark:text-sky-400 mb-2">◆現状</p>
+                      <ul className="space-y-1.5 mb-4">
+                        {problem.before.map((item) => (
+                          <li key={item} className="text-sm text-muted-foreground flex gap-2">
+                            <span className="w-1 h-1 rounded-full bg-muted-foreground/60 mt-2 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-sm font-bold text-sky-600 dark:text-sky-400 mb-2">◆導入後</p>
+                      <ul className="space-y-1.5">
+                        {problem.after.map((item) => (
+                          <li key={item} className="text-sm text-foreground font-medium flex gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      {circleLabels.map((label, i) => (
+                        <div key={label}>
+                          <div className="flex gap-3">
+                            <span className="text-xl font-bold text-foreground shrink-0">
+                              {label}
+                            </span>
+                            <div>
+                              <h4 className="text-base font-bold text-foreground">
+                                {pointTitles[i]}
+                              </h4>
+                              <p className="text-sm text-sky-600 dark:text-sky-400 font-medium mt-0.5">
+                                {pointSubs[i]}
+                              </p>
+                              <ul className="mt-2 space-y-1.5">
+                                {(i === 0 ? problem.before : problem.after).map((item) => (
+                                  <li
+                                    key={item}
+                                    className={`text-sm flex items-start gap-2 ${i === 0
+                                        ? "text-muted-foreground"
+                                        : "text-foreground font-medium"
+                                      }`}
+                                  >
+                                    <span
+                                      className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${i === 0 ? "bg-muted-foreground/60" : "bg-primary"
+                                        }`}
+                                    />
+                                    <span>{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                {/* After Section */}
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 text-xs font-bold rounded-full bg-primary/10 text-primary">
-                      導入後
-                    </span>
-                  </div>
-                  <ul className="space-y-3">
-                    {problem.after.map((item) => (
-                      <li
-                        key={item}
-                        className="text-sm text-foreground font-medium flex items-start gap-3"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

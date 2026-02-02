@@ -10,20 +10,20 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'AI・業務自動化コンサルティング | 自由は、仕組みから生まれる',
   description: '人がやらなくていい仕事は、仕組みに任せる。AIと自動化で業務の裏側を整え、現場が本来やるべき仕事に集中できる状態をつくります。',
-  generator: 'v0.app',
+  generator: 'ATLAS',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/Atlas_Tahoe_Icon.webp',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/Atlas_Tahoe_Icon.webp',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/Atlas_Tahoe_Icon.webp',
+        type: 'image/webp',
       },
     ],
     apple: '/apple-icon.png',
