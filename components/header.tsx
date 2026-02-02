@@ -28,11 +28,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20 md:h-24 leading-3 text-primary">
@@ -46,7 +45,7 @@ export function Header() {
               <span className="text-foreground">S</span>
             </span>
             <span className="hidden sm:block ml-3 text-xs text-muted-foreground font-medium border-l border-border pl-3">
-              AI & Automation
+              AIおよびビジネス自動化
             </span>
           </Link>
 
@@ -56,11 +55,10 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${
-                  pathname === link.href
-                    ? "text-foreground after:w-full"
-                    : "text-muted-foreground hover:text-foreground after:w-0 hover:after:w-full"
-                }`}
+                className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 ${pathname === link.href
+                  ? "text-foreground after:w-full"
+                  : "text-muted-foreground hover:text-foreground after:w-0 hover:after:w-full"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -83,9 +81,8 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ${
-            isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`md:hidden overflow-hidden transition-all duration-500 ${isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <nav className="py-6 border-t border-border bg-background/95 backdrop-blur-md">
             <div className="flex flex-col gap-4">
@@ -93,11 +90,10 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-base font-medium transition-colors px-2 py-2 ${
-                    pathname === link.href
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`text-base font-medium transition-colors px-2 py-2 ${pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

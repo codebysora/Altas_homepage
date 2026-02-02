@@ -44,9 +44,8 @@ export function Problems() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <div
-          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
             私たちが<span className="text-primary">解決</span>すること
@@ -60,9 +59,8 @@ export function Problems() {
           {problems.map((problem, index) => (
             <div
               key={problem.title}
-              className={`group transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`group transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
               style={{ transitionDelay: `${(index + 1) * 150}ms` }}
             >
               <div className="h-full bg-background rounded-2xl p-6 md:p-8 border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">

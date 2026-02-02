@@ -22,9 +22,8 @@ export function Contact() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative">
         <div
-          className={`transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-balance">
             無料相談
@@ -40,9 +39,8 @@ export function Contact() {
         </div>
 
         <div
-          className={`flex flex-col sm:flex-row gap-4 justify-center mb-10 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`flex flex-col sm:flex-row gap-4 justify-center mb-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           style={{ transitionDelay: "200ms" }}
         >
           <Button
@@ -64,18 +62,17 @@ export function Contact() {
         </div>
 
         <div
-          className={`flex items-center justify-center gap-3 text-sm opacity-80 transition-all duration-700 ${
-            isVisible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`flex items-center justify-center gap-3 text-sm opacity-80 transition-all duration-700 ${isVisible ? "opacity-80 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           style={{ transitionDelay: "400ms" }}
         >
           <Mail className="w-4 h-4" />
           <span>Zoomが難しい場合はメールでも可：</span>
           <Link
-            href="mailto:contact@example.com"
+            href="mailto:atlas.workroom@gmail.com"
             className="underline hover:no-underline transition-all"
           >
-            contact@example.com
+            atlas.workroom@gmail.com
           </Link>
         </div>
       </div>

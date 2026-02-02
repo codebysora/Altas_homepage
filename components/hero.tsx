@@ -17,15 +17,16 @@ export function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/60 to-background/10" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 py-10 md:py-20 -mt-20 ">
+        <div className="max-w-4xl">
           {/* Animated badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">AI & Business Automation</span>
+            <span className="text-sm font-medium text-primary">AIおよびビジネス自動化</span>
+
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight text-balance animate-fade-in-up animation-delay-100">
@@ -36,9 +37,9 @@ export function Hero() {
 
           <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-200">
             人がやらなくていい仕事は、仕組みに任せる。
-            <br className="hidden sm:block" />
+            {/* <br className="hidden sm:block" /> */}
             私たちは、AIと自動化で業務の裏側を整え、
-            <br className="hidden sm:block" />
+            {/* <br className="hidden sm:block" /> */}
             現場が本来やるべき仕事に集中できる状態をつくります。
           </p>
 
