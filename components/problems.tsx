@@ -62,37 +62,44 @@ export function Problems() {
           </p>
         </header>
 
-        {/* Table-style layout: clear columns, easy to scan */}
+        {/* Table: one image as table background, width matches header container */}
         <div
-          className={`rounded-xl border border-border bg-background overflow-hidden shadow-sm transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          className={`w-full rounded-xl border border-border overflow-hidden shadow-sm transition-all duration-700 bg-cover bg-center bg-no-repeat ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
-          style={{ transitionDelay: "150ms" }}
+          style={{
+            transitionDelay: "150ms",
+            backgroundImage: `url(${PROBLEMS_IMAGE})`,
+          }}
         >
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse text-left min-w-[600px]">
+          {/* Overlay so table content stays readable */}
+          <div
+            className="w-full min-h-full bg-background/85 dark:bg-background/70"
+            aria-hidden
+          >
+            <table className="w-full border-collapse text-left table-fixed">
               <thead>
                 <tr className="border-b border-border bg-muted/50">
                   <th
                     scope="col"
-                    className="w-14 md:w-16 py-4 px-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="w-14 md:w-16 py-5 md:py-6 px-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     No.
                   </th>
                   <th
                     scope="col"
-                    className="w-[200px] md:w-[220px] py-4 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="py-5 md:py-6 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     課題
                   </th>
                   <th
                     scope="col"
-                    className="py-4 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="py-5 md:py-6 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     現状
                   </th>
                   <th
                     scope="col"
-                    className="py-4 px-4 text-xs font-semibold text-primary uppercase tracking-wider"
+                    className="py-5 md:py-6 px-4 text-xs font-semibold text-primary uppercase tracking-wider"
                   >
                     導入後
                   </th>
@@ -106,25 +113,18 @@ export function Problems() {
                       } hover:bg-muted/20`}
                     style={{ transitionDelay: `${(index + 2) * 80}ms` }}
                   >
-                    <td className="py-5 px-4 text-center align-top">
+                    <td className="w-14 md:w-16 py-8 md:py-10 px-4 text-center align-top">
                       <span className="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-primary/10 text-base font-bold text-primary tabular-nums">
                         {index + 1}
                       </span>
                     </td>
-                    <td className="py-0 px-0 align-top w-[200px] md:w-[220px]">
-                      <div
-                        className="min-h-[120px] md:min-h-[100px] flex flex-col justify-end p-4 bg-cover bg-center bg-no-repeat text-white"
-                        style={{
-                          backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%), url(${PROBLEMS_IMAGE})`,
-                        }}
-                      >
-                        <span className="text-sm md:text-base font-bold drop-shadow-md">
-                          {problem.title}
-                        </span>
-                      </div>
+                    <td className="py-8 md:py-10 px-4 align-top">
+                      <span className="text-base md:text-lg font-bold text-foreground">
+                        {problem.title}
+                      </span>
                     </td>
-                    <td className="py-5 px-4 align-top">
-                      <ul className="space-y-2">
+                    <td className="py-8 md:py-10 px-4 align-top">
+                      <ul className="space-y-3">
                         {problem.before.map((item) => (
                           <li
                             key={item}
@@ -136,8 +136,8 @@ export function Problems() {
                         ))}
                       </ul>
                     </td>
-                    <td className="py-5 px-4 align-top">
-                      <ul className="space-y-2">
+                    <td className="py-8 md:py-10 px-4 align-top">
+                      <ul className="space-y-3">
                         {problem.after.map((item) => (
                           <li
                             key={item}
