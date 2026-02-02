@@ -11,7 +11,7 @@ const navLinks = [
 export function Footer() {
   return (
     <div className="relative">
-      <footer className="py-16 bg-foreground text-background">
+      <footer className="pt-16 pb-12 bg-foreground text-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             {/* ATLAS Logo */}
@@ -43,14 +43,14 @@ export function Footer() {
             </nav>
           </div>
 
-          <div className="mt-12 pt-8 text-center ">
+          <div className="mt-8 pt-8 text-center ">
             <p className="text-sm opacity-60">
               © {new Date().getFullYear()} ATLAS. All rights reserved.
             </p>
           </div>
         </div>
       </footer>
-      <div className="border-t border-background/30 absolute bottom-23 z-30 w-full">asdfadsf</div>
+      <div className="border-t border-background/30 absolute bottom-18 z-30 w-full">asdfadsf</div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/services", label: "サービス" },
   { href: "/results", label: "実績・発信" },
   { href: "/careers", label: "一緒に働く" },
+  { href: "/contact", label: "お問い合わせ" },
 ];
 
 export function Header() {
@@ -63,8 +64,8 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="px-6 transition-all duration-300 hover:scale-105">
-              <Link href="/contact">無料相談</Link>
+            <Button asChild className="px-6 transition-all duration-300 hover:scale-105 shrink-0">
+              <Link href="/contact">お問い合わせ</Link>
             </Button>
           </nav>
 
@@ -101,7 +102,7 @@ export function Header() {
               ))}
               <Button asChild className="w-full mt-2">
                 <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                  無料相談
+                  お問い合わせ
                 </Link>
               </Button>
             </div>
