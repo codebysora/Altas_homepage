@@ -1,41 +1,26 @@
 "use client";
 
-import Image from "next/image";
-import { ClipboardList, Users, Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const PROBLEMS_IMAGE = "/images/problems-solutions.png";
 
 const problems = [
   {
-    icon: ClipboardList,
     title: "手作業が多すぎる",
     before: ["入力・転記・確認が手作業", "作業に追われ、考える時間がない"],
     after: ["処理は自動化", "人は判断・対応に集中できる"],
-    gradient: "from-primary/20 to-primary/5",
   },
   {
-    icon: Users,
     title: "人が張り付かないと回らない",
     before: ["問い合わせ・確認対応で時間が取られる"],
     after: ["自動応答・自動処理", "必要な対応だけ人が行う"],
-    gradient: "from-accent/20 to-accent/5",
   },
   {
-    icon: Sparkles,
     title: "AIを業務で使えていない",
     before: ["AIは知っているが、使えていない"],
     after: ["実務に組み込まれたAI", "品質・顧客満足度が向上"],
-    gradient: "from-primary/20 to-primary/5",
   },
 ];
-
-const circleLabels = ["①", "②"] as const;
-const pointTitles = ["現状を知ろう", "解決策を知る"] as const;
-const pointSubs = [
-  "どんなことが問題になっているのか把握しよう",
-  "解決するにはどうすればいい?",
-] as const;
 
 export function Problems() {
   const [sectionRef, isVisible] = useScrollAnimation<HTMLElement>({ threshold: 0.1 });
@@ -44,129 +29,131 @@ export function Problems() {
     <section
       id="problems"
       ref={sectionRef}
-      className="py-24 md:py-36 bg-card relative overflow-hidden"
+      className="py-24 md:py-32 bg-muted/30 relative overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      </div>
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06]"
+        aria-hidden
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            -12deg,
+            transparent,
+            transparent 40px,
+            currentColor 40px,
+            currentColor 1px
+          )`,
+        }}
+      />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-        <div
-          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
+        <header
+          className={`text-center mb-10 md:mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-balance">
+          <p className="text-sm tracking-[0.3em] text-muted-foreground mb-3">
+            解決する課題
+          </p>
+          <h2 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight">
             私たちが<span className="text-primary">解決</span>すること
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <div className="mt-6 w-12 h-px bg-primary/50 mx-auto" />
+          <p className="mt-6 text-base text-muted-foreground">
             現場の「困った」を仕組みで解消します
           </p>
-        </div>
+        </header>
 
-        {/* One part per section: Part 1 & 3 = image left, text right. Part 2 = text left, image right. One image for all. */}
-        <div className="space-y-12 md:space-y-16">
-          {problems.map((problem, partIndex) => {
-            const imageOnLeft = partIndex !== 1; // Part 1 and 3: left. Part 2: right.
-            return (
-              <div
-                key={problem.title}
-                className={`rounded-2xl border-2 border-primary/30 bg-background overflow-hidden shadow-md transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
-                style={{ transitionDelay: `${(partIndex + 1) * 120}ms` }}
-              >
-                <div
-                  className={`grid md:grid-cols-2 gap-0 min-h-0 ${!imageOnLeft ? "md:grid-flow-dense" : ""
-                    }`}
-                >
-                  {/* Image block - one image for all parts */}
-                  <div
-                    className={`relative aspect-[4/3] md:aspect-auto md:min-h-[280px] ${!imageOnLeft ? "md:col-start-2" : ""
-                      }`}
+        {/* Table-style layout: clear columns, easy to scan */}
+        <div
+          className={`rounded-xl border border-border bg-background overflow-hidden shadow-sm transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          style={{ transitionDelay: "150ms" }}
+        >
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-left min-w-[600px]">
+              <thead>
+                <tr className="border-b border-border bg-muted/50">
+                  <th
+                    scope="col"
+                    className="w-14 md:w-16 py-4 px-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
-                    <Image
-                      src={PROBLEMS_IMAGE}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-
-                  {/* Text block: Icon + Title + Explanation + Numbered points */}
-                  <div
-                    className={`p-6 md:p-8 flex flex-col justify-center border-t md:border-t-0 md:border-l border-border ${!imageOnLeft ? "md:col-start-1 md:row-start-1 md:border-l-0 md:border-r" : ""
-                      }`}
+                    No.
+                  </th>
+                  <th
+                    scope="col"
+                    className="w-[200px] md:w-[220px] py-4 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
                   >
-                    <div
-                      className={`w-14 h-14 rounded-xl border-2 border-primary/40 bg-gradient-to-br ${problem.gradient} flex items-center justify-center shrink-0 mb-3`}
-                    >
-                      <problem.icon className="w-7 h-7 text-primary" />
-                    </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                      {problem.title}
-                    </h3>
-                    <div className="border border-border rounded-lg p-4 bg-muted/20 mb-5">
-                      <p className="text-sm font-bold text-sky-600 dark:text-sky-400 mb-2">◆現状</p>
-                      <ul className="space-y-1.5 mb-4">
+                    課題
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-4 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                  >
+                    現状
+                  </th>
+                  <th
+                    scope="col"
+                    className="py-4 px-4 text-xs font-semibold text-primary uppercase tracking-wider"
+                  >
+                    導入後
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {problems.map((problem, index) => (
+                  <tr
+                    key={problem.title}
+                    className={`border-b border-border last:border-b-0 transition-all duration-500 ${isVisible ? "opacity-100" : "opacity-0"
+                      } hover:bg-muted/20`}
+                    style={{ transitionDelay: `${(index + 2) * 80}ms` }}
+                  >
+                    <td className="py-5 px-4 text-center align-top">
+                      <span className="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-primary/10 text-base font-bold text-primary tabular-nums">
+                        {index + 1}
+                      </span>
+                    </td>
+                    <td className="py-0 px-0 align-top w-[200px] md:w-[220px]">
+                      <div
+                        className="min-h-[120px] md:min-h-[100px] flex flex-col justify-end p-4 bg-cover bg-center bg-no-repeat text-white"
+                        style={{
+                          backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%), url(${PROBLEMS_IMAGE})`,
+                        }}
+                      >
+                        <span className="text-sm md:text-base font-bold drop-shadow-md">
+                          {problem.title}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-5 px-4 align-top">
+                      <ul className="space-y-2">
                         {problem.before.map((item) => (
-                          <li key={item} className="text-sm text-muted-foreground flex gap-2">
-                            <span className="w-1 h-1 rounded-full bg-muted-foreground/60 mt-2 shrink-0" />
+                          <li
+                            key={item}
+                            className="text-sm text-muted-foreground flex items-start gap-2 leading-relaxed"
+                          >
+                            <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2 shrink-0" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
-                      <p className="text-sm font-bold text-sky-600 dark:text-sky-400 mb-2">◆導入後</p>
-                      <ul className="space-y-1.5">
+                    </td>
+                    <td className="py-5 px-4 align-top">
+                      <ul className="space-y-2">
                         {problem.after.map((item) => (
-                          <li key={item} className="text-sm text-foreground font-medium flex gap-2">
+                          <li
+                            key={item}
+                            className="text-sm text-foreground font-medium flex items-start gap-2 leading-relaxed"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
-                    </div>
-                    <div className="space-y-4">
-                      {circleLabels.map((label, i) => (
-                        <div key={label}>
-                          <div className="flex gap-3">
-                            <span className="text-xl font-bold text-foreground shrink-0">
-                              {label}
-                            </span>
-                            <div>
-                              <h4 className="text-base font-bold text-foreground">
-                                {pointTitles[i]}
-                              </h4>
-                              <p className="text-sm text-sky-600 dark:text-sky-400 font-medium mt-0.5">
-                                {pointSubs[i]}
-                              </p>
-                              <ul className="mt-2 space-y-1.5">
-                                {(i === 0 ? problem.before : problem.after).map((item) => (
-                                  <li
-                                    key={item}
-                                    className={`text-sm flex items-start gap-2 ${i === 0
-                                        ? "text-muted-foreground"
-                                        : "text-foreground font-medium"
-                                      }`}
-                                  >
-                                    <span
-                                      className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${i === 0 ? "bg-muted-foreground/60" : "bg-primary"
-                                        }`}
-                                    />
-                                    <span>{item}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
