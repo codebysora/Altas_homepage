@@ -60,9 +60,8 @@ export function ContactPageContent() {
           <div className="absolute bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         </div>
         <div
-          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${
-            heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
@@ -101,9 +100,8 @@ function MainContactSection() {
     <section ref={ref} className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {/* Zoom Consultation - Primary */}
           <div className="bg-card rounded-2xl p-8 md:p-10 border-2 border-primary shadow-xl relative overflow-hidden">
@@ -131,11 +129,18 @@ function MainContactSection() {
               </div>
             </div>
             <Button
+              asChild
               size="lg"
               className="w-full text-base py-6 transition-all duration-300 hover:scale-[1.02]"
             >
-              Zoom相談を予約する
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <a
+                href="https://timerex.net/s/atlas.workroom_7175/7f8d7c44/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zoom相談を予約する
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
             </Button>
             <p className="text-xs text-muted-foreground mt-4 text-center">
               予約画面に移動します
@@ -157,10 +162,10 @@ function MainContactSection() {
             <div className="bg-secondary/50 rounded-xl p-6 mb-8">
               <p className="text-sm text-muted-foreground mb-2">メールアドレス</p>
               <a
-                href="mailto:contact@atlas-consulting.jp"
+                href="mailto:atlas.workroom@gmail.com"
                 className="text-lg font-medium text-foreground hover:text-primary transition-colors break-all"
               >
-                contact@atlas-consulting.jp
+                atlas.workroom@gmail.com
               </a>
             </div>
             <Button
@@ -169,7 +174,7 @@ function MainContactSection() {
               className="w-full text-base py-6 transition-all duration-300 hover:scale-[1.02] bg-transparent"
               asChild
             >
-              <a href="mailto:contact@atlas-consulting.jp">
+              <a href="mailto:atlas.workroom@gmail.com">
                 <Mail className="mr-2 w-5 h-5" />
                 メールを送る
               </a>
@@ -179,9 +184,8 @@ function MainContactSection() {
 
         {/* Benefits */}
         <div
-          className={`mt-12 bg-secondary/30 rounded-2xl p-8 transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mt-12 bg-secondary/30 rounded-2xl p-8 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit) => (
@@ -204,9 +208,8 @@ function ProcessSection() {
     <section ref={ref} className="py-20 md:py-32 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
             相談の流れ
@@ -219,9 +222,8 @@ function ProcessSection() {
           </p>
         </div>
         <div
-          className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {consultationSteps.map((step, index) => (
             <div
@@ -279,9 +281,8 @@ function FAQSection() {
     <section ref={ref} className="py-20 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
             よくあるご質問
@@ -291,9 +292,8 @@ function FAQSection() {
           </h2>
         </div>
         <div
-          className={`space-y-4 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`space-y-4 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {faqs.map((faq, index) => (
             <div

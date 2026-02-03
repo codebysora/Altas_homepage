@@ -50,7 +50,7 @@ export function Contact() {
             className="text-base group transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
             <Link
-              href="https://calendly.com"
+              href="https://timerex.net/s/atlas.workroom_7175/7f8d7c44"
               target="_blank"
               rel="noopener noreferrer"
             >

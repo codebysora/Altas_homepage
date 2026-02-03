@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/services", label: "サービス" },
   { href: "/results", label: "実績・発信" },
   { href: "/careers", label: "一緒に働く" },
-  { href: "/contact", label: "お問い合わせ" },
 ];
 
 export function Header() {
