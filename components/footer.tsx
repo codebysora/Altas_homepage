@@ -26,7 +26,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="text-sm opacity-60 mt-2">
-                AI & Business Automation
+                AIおよびビジネス自動化
               </p>
             </div>
 
