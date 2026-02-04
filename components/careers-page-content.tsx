@@ -90,9 +90,8 @@ export function CareersPageContent() {
           <div className="absolute bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         </div>
         <div
-          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${
-            heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
@@ -137,9 +136,8 @@ function CEOMessageSection() {
     <section ref={ref} className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
@@ -181,7 +179,8 @@ function CEOMessageSection() {
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-foreground font-semibold">ATLAS 代表</p>
+              <p className="text-foreground font-semibold">直井 星空（なおい そら）</p>
+              <p className="text-sm text-muted-foreground mt-1">ATLAS 代表</p>
             </div>
           </div>
         </div>
@@ -197,9 +196,8 @@ function ValuesSection() {
     <section ref={ref} className="py-20 md:py-32 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
             大切にしていること
@@ -209,9 +207,8 @@ function ValuesSection() {
           </h2>
         </div>
         <div
-          className={`grid md:grid-cols-3 gap-8 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid md:grid-cols-3 gap-8 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {values.map((value, index) => (
             <div
@@ -243,9 +240,8 @@ function TeamSection() {
     <section ref={ref} className="py-20 md:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="order-2 lg:order-1">
             <div className="flex items-center gap-3 mb-6">
@@ -309,9 +305,8 @@ function PositionsSection() {
     <section ref={ref} className="py-20 md:py-32 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
             募集職種
@@ -324,9 +319,8 @@ function PositionsSection() {
           </p>
         </div>
         <div
-          className={`space-y-8 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`space-y-8 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {positions.map((position, index) => (
             <div
@@ -400,9 +394,8 @@ function CTASection() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       </div>
       <div
-        className={`max-w-4xl mx-auto px-4 sm:px-6 text-center relative transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`max-w-4xl mx-auto px-4 sm:px-6 text-center relative transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-6 text-balance">
           一緒に働きませんか？

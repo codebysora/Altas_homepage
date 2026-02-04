@@ -30,16 +30,14 @@ export function Hero() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight text-balance animate-fade-in-up animation-delay-100">
-            自由は、
+            業務自動化で
             <br className="sm:hidden" />
-            <span className="text-primary">仕組み</span>から生まれる。
+            <span className="text-primary">攻めの経営</span>を。
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-muted-foreground leading-relaxed animate-fade-in-up animation-delay-200">
             人がやらなくていい仕事は、仕組みに任せる。
-            {/* <br className="hidden sm:block" /> */}
             私たちは、AIと自動化で業務の裏側を整え、
-            {/* <br className="hidden sm:block" /> */}
             現場が本来やるべき仕事に集中できる状態をつくります。
           </p>
 

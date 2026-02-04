@@ -73,7 +73,7 @@ export function Problems() {
         >
           {/* Overlay so table content stays readable */}
           <div
-            className="w-full min-h-full bg-background/85 dark:bg-background/70"
+            className="w-full min-h-full bg-background/94 dark:bg-background/88"
             aria-hidden
           >
             <table className="w-full border-collapse text-left table-fixed">
