@@ -71,7 +71,7 @@ export function Services() {
         </div>
 
         {/* 3-column grid: same layout on mobile and desktop for full overview */}
-        <div className="grid grid-cols-3 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
           {services.map((service, index) => (
             <article
               key={service.title}

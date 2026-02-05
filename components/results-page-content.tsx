@@ -29,7 +29,7 @@ const articles = [
     title: "ATLASホームページを公開しました",
     description:
       "この度、ATLAS（アトラス）の公式ホームページを公開いたしました。今後とも、AI・業務自動化を通じて、皆様のビジネスをサポートしてまいります。",
-    date: "2025年1月",
+    date: "2026年1月",
     image: "/images/news-1.jpg",
     featured: true,
   },
@@ -40,43 +40,44 @@ const articles = [
     title: "製造業A社様：月40時間の業務削減を実現",
     description:
       "受発注管理業務の自動化により、手作業による入力ミスの解消と大幅な工数削減を達成しました。",
-    date: "2025年1月",
+    date: "2026年1月",
     image: "/images/news-2.jpg",
     featured: true,
   },
   {
     id: 3,
-    category: "events",
-    categoryLabel: "イベント・活動報告",
-    title: "中小企業向けAI活用セミナーに登壇しました",
-    description:
-      "「今日からできるAI活用術」をテーマに、実践的なAI導入のポイントについてお話しました。",
-    date: "2024年12月",
-    image: "/images/news-3.jpg",
-    featured: false,
-  },
-  {
-    id: 4,
-    category: "results",
-    categoryLabel: "実績",
-    title: "サービス業B社様：顧客対応の品質向上",
-    description:
-      "AI チャットボットの導入により、24時間対応が可能になり、顧客満足度が大幅に向上しました。",
-    date: "2024年11月",
-    image: "/images/service-support.jpg",
-    featured: false,
-  },
-  {
-    id: 5,
     category: "news",
     categoryLabel: "お知らせ",
     title: "年末年始の休業について",
     description:
       "年末年始は休業とさせていただきます。休業期間は決まり次第、お知らせにてご案内いたします。",
-    date: "お知らせ",
+    date: "2025年12月",
     image: "/images/service-consulting.jpg",
     featured: false,
   },
+  {
+    id: 4,
+    category: "events",
+    categoryLabel: "イベント・活動報告",
+    title: "中小企業向けAI活用セミナーに登壇しました",
+    description:
+      "「今日からできるAI活用術」をテーマに、実践的なAI導入のポイントについてお話しました。",
+    date: "2025年12月",
+    image: "/images/news-3.jpg",
+    featured: false,
+  },
+  {
+    id: 5,
+    category: "results",
+    categoryLabel: "実績",
+    title: "サービス業B社様：顧客対応の品質向上",
+    description:
+      "AI チャットボットの導入により、24時間対応が可能になり、顧客満足度が大幅に向上しました。",
+    date: "2025年11月",
+    image: "/images/service-support.jpg",
+    featured: false,
+  },
+
 ];
 
 export function ResultsPageContent() {
@@ -94,9 +95,8 @@ export function ResultsPageContent() {
           <div className="absolute bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         </div>
         <div
-          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${
-            heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`max-w-6xl mx-auto px-4 sm:px-6 relative transition-all duration-700 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
@@ -137,20 +137,18 @@ function CategoriesSection() {
   return (
     <section ref={ref} className="py-8 border-b border-border">
       <div
-        className={`max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`max-w-6xl mx-auto px-4 sm:px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         <div className="flex flex-wrap gap-3 justify-center">
           {categories.map((category) => (
             <button
               key={category.id}
               type="button"
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                category.id === "all"
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
-              }`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${category.id === "all"
+                ? "bg-primary text-primary-foreground"
+                : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
+                }`}
             >
               {category.icon && <category.icon className="w-4 h-4" />}
               {category.label}
@@ -170,18 +168,16 @@ function FeaturedSection() {
     <section ref={ref} className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`mb-10 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mb-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             注目の記事
           </h2>
         </div>
         <div
-          className={`grid md:grid-cols-2 gap-8 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`grid md:grid-cols-2 gap-8 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {featuredArticles.map((article, index) => (
             <article
@@ -236,18 +232,16 @@ function ArticlesSection() {
     <section ref={ref} className="py-16 md:py-24 bg-secondary/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
-          className={`mb-10 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`mb-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             すべての記事
           </h2>
         </div>
         <div
-          className={`space-y-6 transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`space-y-6 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           {regularArticles.map((article, index) => (
             <article
@@ -263,6 +257,7 @@ function ArticlesSection() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
+
               <div className="flex-1 flex flex-col justify-center">
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-primary/10 text-primary text-xs font-medium rounded-full">
@@ -280,7 +275,7 @@ function ArticlesSection() {
                   {article.description}
                 </p>
               </div>
-              <div className="flex items-center sm:pr-2">
+              <div className="hidden md:flex items-center sm:pr-2">
                 <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
               </div>
             </article>
@@ -301,9 +296,8 @@ function CTASection() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       </div>
       <div
-        className={`max-w-4xl mx-auto px-4 sm:px-6 text-center relative transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
+        className={`max-w-4xl mx-auto px-4 sm:px-6 text-center relative transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-6 text-balance">
           丁寧なヒアリングに基づき、
