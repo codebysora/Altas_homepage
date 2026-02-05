@@ -57,8 +57,15 @@ export function Services() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        {/* 
+          The error comes from a type mismatch:
+          sectionRef is typed as RefObject<HTMLElement | null>,
+          but <div> expects a ref of type RefObject<HTMLDivElement | null>.
+          HTMLElement is more general than HTMLDivElement, hence the assignment fails.
+          The fix is to narrow the generic argument to HTMLDivElement.
+        */}
         <div
-          ref={sectionRef}
+          ref={sectionRef as React.RefObject<HTMLDivElement>}
           className={`text-center mb-12 md:mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
