@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/", label: "トップ" },
   { href: "/services", label: "サービス" },
   { href: "/results", label: "実績・発信" },
-  { href: "/contact", label: "お問い合わせ" },
+  { href: "/#about", label: "私たちについて" },
 ];
 
 export function Header() {
