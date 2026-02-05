@@ -11,7 +11,7 @@ export function Careers() {
 
   return (
     <section
-      id="careers"
+      id="about"
       ref={sectionRef}
       className="py-24 md:py-36 bg-background relative overflow-hidden"
     >
@@ -30,7 +30,7 @@ export function Careers() {
           >
             <Image
               src="/images/team.jpg"
-              alt="チームメンバー"
+              alt="私たちの取り組み"
               fill
               className="object-cover"
             />
@@ -45,7 +45,7 @@ export function Careers() {
             style={{ transitionDelay: "200ms" }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-              一緒に<span className="text-primary">働く</span>
+              私たち<span className="text-primary">について</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
@@ -54,15 +54,15 @@ export function Careers() {
                 現場がより創造的な仕事に集中できる環境をつくっています。
               </p>
               <p>
-                AIや自動化の技術を使って、クライアントの業務改善に取り組む仲間を募集しています。
-                営業・開発ともに、一緒に挑戦してくれる方をお待ちしています。
+                AIと自動化の技術で、クライアントの業務改善に取り組んでいます。
+                御社の課題について、お気軽にご相談ください。
               </p>
             </div>
 
             <div className="mt-10">
               <Button asChild variant="outline" size="lg" className="group transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:border-primary bg-transparent">
                 <Link href="#contact">
-                  採用について相談する
+                  お問い合わせ
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

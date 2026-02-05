@@ -70,10 +70,10 @@ const articles = [
     id: 5,
     category: "news",
     categoryLabel: "お知らせ",
-    title: "年末年始の営業について",
+    title: "年末年始の休業について",
     description:
-      "2024年12月28日から2025年1月5日まで、年末年始休業とさせていただきます。",
-    date: "2024年12月",
+      "年末年始は休業とさせていただきます。休業期間は決まり次第、お知らせにてご案内いたします。",
+    date: "お知らせ",
     image: "/images/service-consulting.jpg",
     featured: false,
   },
@@ -306,14 +306,12 @@ function CTASection() {
         }`}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-6 text-balance">
-          御社の課題も
+          丁寧なヒアリングに基づき、
           <br className="sm:hidden" />
-          解決できるかもしれません
+          最適な解決策をご提案します
         </h2>
         <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed">
-          まずはお気軽にご相談ください。
-          <br className="hidden sm:block" />
-          御社に合った解決策をご提案いたします。
+          まずはお気軽にご相談ください。御社の課題をうかがい、最適なソリューションをご提案いたします。
         </p>
         <Button
           asChild

@@ -4,7 +4,7 @@ const navLinks = [
   { href: "/", hash: "#top", label: "トップ" },
   { href: "/", hash: "#services", label: "サービス" },
   { href: "/", hash: "#results", label: "実績・発信" },
-  { href: "/careers", label: "一緒に働く" },
+  { href: "/", hash: "#about", label: "私たちについて" },
   { href: "/contact", label: "お問い合わせ" },
 ];
 

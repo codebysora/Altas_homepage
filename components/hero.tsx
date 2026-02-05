@@ -29,8 +29,8 @@ export function Hero() {
 
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight text-balance animate-fade-in-up animation-delay-100">
-            業務自動化で
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight animate-fade-in-up animation-delay-100">
+            <span className="inline-block">業務自動化で</span>
             <br className="sm:hidden" />
             <span className="text-primary">攻めの経営</span>を。
           </h1>

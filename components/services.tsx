@@ -10,40 +10,37 @@ const services = [
     icon: MessageSquare,
     title: "AI・業務改善コンサルティング",
     description:
-      "業務ヒアリングから課題整理・改善ポイントの明確化、AI・自動化の活用設計まで伴走します。",
+      "業務ヒアリングから課題整理・改善ポイントの明確化、AI・自動化の活用設計まで、一貫して伴走します。",
     points: [
       "業務ヒアリング",
       "課題整理・改善ポイントの明確化",
       "AI／自動化の活用設計",
     ],
     image: "/images/service-consulting.jpg",
-    href: "/services",
   },
   {
     icon: Cog,
     title: "業務自動化・システム構築",
     description:
-      "現場を変えず、裏側を整える。自動化設計から実運用を前提とした開発まで。",
+      "現場を変えず、裏側を整えます。自動化設計から実運用を前提とした開発まで、一貫して対応します。",
     points: [
       "業務単位での自動化設計",
       "現場を変えず、裏側を整える構築",
       "実運用を前提とした開発",
     ],
     image: "/images/service-automation.jpg",
-    href: "/services",
   },
   {
     icon: HeartHandshake,
     title: "継続サポート",
     description:
-      "「作って終わり」にしない。導入後の調整・改善、運用サポート、環境変化への対応。",
+      "「作って終わり」にしません。導入後の調整・改善、運用サポート、業務・環境変化への対応まで、継続的にサポートします。",
     points: [
       "導入後の調整・改善",
       "運用サポート",
       "業務・環境変化への対応",
     ],
     image: "/images/service-support.jpg",
-    href: "/services",
   },
 ];
 
@@ -82,7 +79,7 @@ export function Services() {
                 }`}
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
-              <Link href={service.href} className="block">
+              <div className="block">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={service.image || "/placeholder.svg"}
@@ -116,7 +113,7 @@ export function Services() {
                     ))}
                   </ul>
                 </div>
-              </Link>
+              </div>
             </article>
           ))}
         </div>

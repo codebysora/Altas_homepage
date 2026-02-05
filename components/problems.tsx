@@ -45,7 +45,7 @@ export function Problems() {
         }}
       />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
         <header
           className={`text-center mb-10 md:mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
@@ -81,25 +81,25 @@ export function Problems() {
                 <tr className="border-b border-border bg-muted/50">
                   <th
                     scope="col"
-                    className="w-14 md:w-16 py-5 md:py-6 px-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="w-14 md:w-16 py-5 md:py-6 px-6 text-center text-ms font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     No.
                   </th>
                   <th
                     scope="col"
-                    className="py-5 md:py-6 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="py-5 md:py-6 px-6 text-ms font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     課題
                   </th>
                   <th
                     scope="col"
-                    className="py-5 md:py-6 px-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider"
+                    className="py-5 md:py-6 px-6 text-ms font-semibold text-muted-foreground uppercase tracking-wider"
                   >
                     現状
                   </th>
                   <th
                     scope="col"
-                    className="py-5 md:py-6 px-4 text-xs font-semibold text-primary uppercase tracking-wider"
+                    className="py-5 md:py-6 px-6 text-ms font-semibold text-primary uppercase tracking-wider"
                   >
                     導入後
                   </th>
